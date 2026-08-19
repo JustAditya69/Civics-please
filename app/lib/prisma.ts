@@ -8,7 +8,6 @@ const adapter = new PrismaPg(pool);
 
 const globalForPrisma = global as unknown as { prisma: PrismaClient };
 
-// We pass the adapter explicitly to satisfy Prisma v7 requirement
 export const prisma =
   globalForPrisma.prisma || new PrismaClient({ adapter });
 
