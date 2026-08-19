@@ -12,7 +12,7 @@ export default async function Home() {
   const stats = await getLandingPageStats();
 
   return (
-    <main className="min-h-screen bg-black">
+    <main className="bg-black">
       <Navbar />
       <Hero stats={stats} />
       <HowItWorks />
