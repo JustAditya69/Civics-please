@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  reports   Report[]
+}
+
+model Report {
+  id          String   @id @default(uuid())
+  trackingId  String   @unique
+  category    String
+  title       String
+  description String
+  latitude    String?
+  longitude   String?
+  address     String?
+  priority    String   @default("Medium")
+  status      String   @default("AWAITING_REVIEW")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  userId      String?
+  user        User?    @relation(fields: [userId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+}
+model ContactQuery {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  status    String   @default("UNREAD") // UNREAD, READ, RESOLVED
+  createdAt DateTime @default(now())
+}
