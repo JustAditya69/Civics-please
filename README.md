@@ -4,7 +4,7 @@
 
 **Civics Please** is a modern, high-performance civic issue reporting platform designed to bridge the gap between everyday citizens and municipal authorities.
 
-The platform allows residents to report neighborhood infrastructure problems such as **potholes, broken streetlights, sanitation issues, damaged roads, and other civic problems** in seconds — complete with **smart geolocation and photographic evidence**.
+The platform allows residents to report neighborhood infrastructure problems such as **potholes, broken streetlights, sanitation issues, damaged roads, and other civic problems** in seconds-complete with **smart geolocation and photographic evidence**.
 
 Municipal authorities get a secure command center where they can review, route, track, and resolve incoming reports efficiently.
 
