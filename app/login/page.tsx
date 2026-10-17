@@ -58,32 +58,6 @@ export default function LoginPage() {
           </div>
 
           <div className="border-2 border-[#113320] bg-white p-5 sm:p-8 shadow-[6px_6px_0px_#113320] sm:shadow-[8px_8px_0px_#113320]">
-            
-            {/* Quick Demo Fill Banner */}
-            <div className="border-2 border-[#113320] bg-[#f4ebd6] p-4 mb-6">
-              <div className="flex items-center justify-between gap-2 mb-2">
-                <span className="font-sans text-[10px] font-bold uppercase tracking-wider text-[#113320]">
-                  🔑 DEMO / ADMIN ACCESS
-                </span>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setEmail("admin@civicsplease.gov");
-                    setPassword("AdminPassword123@");
-                    setErrorMessage("");
-                  }}
-                  className="border border-[#113320] bg-white px-2 py-1 font-sans text-[10px] font-bold uppercase text-[#fa6355] hover:bg-[#fa6355] hover:text-white transition-colors shadow-[1px_1px_0px_#113320]"
-                >
-                  Autofill Credentials
-                </button>
-              </div>
-              <p className="font-sans text-[11px] text-[#113320]/80">
-                Email: <span className="font-mono font-bold text-[#113320]">admin@civicsplease.gov</span>
-                <br />
-                Password: <span className="font-mono font-bold text-[#113320]">AdminPassword123@</span>
-              </p>
-            </div>
-
             {errorMessage && (
               <div className="border-2 border-[#113320] bg-[#fa6355]/10 p-3 text-center text-xs text-[#fa6355] font-bold mb-6 uppercase">
                 {errorMessage}
