@@ -3,122 +3,126 @@ import Footer from "../components/Footer";
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="min-h-screen bg-[#050806] text-white">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <div className="relative mx-auto max-w-6xl px-6 py-24 sm:py-32">
-        {/* Ambient Background Glow */}
-        <div className="pointer-events-none absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-green-500/5 blur-[120px]" />
-
-        <div className="relative z-10">
+      <main className="flex-1 w-full px-4 sm:px-6 py-8 sm:py-12 md:py-20 flex flex-col items-center">
+        <div className="w-full max-w-4xl">
           {/* Header */}
-          <div className="mb-16 border-b border-white/10 pb-10 text-center sm:text-left flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+          <div className="mb-10 sm:mb-16 border-b-2 border-[#113320] pb-6 sm:pb-10 text-center sm:text-left flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6">
             <div>
-              <div className="mb-4 flex items-center justify-center sm:justify-start gap-3">
-                <span className="h-px w-10 bg-green-400" />
-                <p className="text-sm font-medium tracking-[0.2em] text-green-400 uppercase">
-                  Transparency First
-                </p>
-              </div>
-              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-                Privacy Policy
+              <p className="font-sans text-[10px] font-bold tracking-[0.2em] text-[#fa6355] uppercase mb-3 sm:mb-4">
+                TRANSPARENCY FIRST
+              </p>
+              <h1 className="font-pixel text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#113320] uppercase leading-snug sm:leading-tight">
+                PRIVACY POLICY
               </h1>
             </div>
-            <p className="text-xs font-mono text-white/40 uppercase tracking-widest bg-white/[0.03] border border-white/10 px-4 py-2">
-              Last Updated: August 2026
+            <p className="font-sans text-[10px] font-bold text-[#113320] uppercase tracking-widest bg-white border-2 border-[#113320] px-4 py-2 shadow-[2px_2px_0px_#113320] w-fit mx-auto sm:mx-0">
+              LAST UPDATED: AUGUST 2026
             </p>
           </div>
 
           {/* Grid Layout for Policy Points */}
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
+          <div className="space-y-6 sm:space-y-8">
             
             {/* 1. What We Collect */}
-            <div className="group border border-white/10 bg-[#0b110d] p-8 transition-all hover:border-green-400/30 hover:bg-white/[0.02]">
-              <div className="mb-6 flex h-12 w-12 items-center justify-center border border-white/10 bg-black text-green-400 transition-colors group-hover:border-green-400/50">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            <div className="border-2 border-[#113320] bg-white p-5 sm:p-8 shadow-[5px_5px_0px_#113320] sm:shadow-[8px_8px_0px_#113320] flex gap-4 sm:gap-6">
+              <div className="hidden sm:flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center border-2 border-[#113320] bg-[#f4ebd6] text-[#113320]">
+                <svg className="w-7 h-7 sm:w-8 sm:h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="square" strokeLinejoin="miter" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
-              <h2 className="mb-3 text-xl font-bold text-white">1. What Information We Collect</h2>
-              <p className="text-sm leading-relaxed text-white/60">
-                When you report an issue, we only ask for what is absolutely necessary to fix it. This includes your name, email address, the location of the problem, and any photos you choose to upload.
-              </p>
+              <div>
+                <h2 className="mb-2 sm:mb-3 font-pixel text-base sm:text-lg text-[#113320] uppercase">1. WHAT WE COLLECT</h2>
+                <p className="font-sans text-xs sm:text-sm leading-relaxed text-[#113320]/80 font-medium">
+                  When you report an issue, we only ask for what is absolutely necessary to fix it. This includes your name, email address, the location of the problem, and any photos you choose to upload.
+                </p>
+              </div>
             </div>
 
             {/* 2. Location */}
-            <div className="group border border-white/10 bg-[#0b110d] p-8 transition-all hover:border-green-400/30 hover:bg-white/[0.02]">
-              <div className="mb-6 flex h-12 w-12 items-center justify-center border border-white/10 bg-black text-green-400 transition-colors group-hover:border-green-400/50">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            <div className="border-2 border-[#113320] bg-white p-5 sm:p-8 shadow-[5px_5px_0px_#113320] sm:shadow-[8px_8px_0px_#113320] flex gap-4 sm:gap-6">
+              <div className="hidden sm:flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center border-2 border-[#113320] bg-[#bce3c5] text-[#113320]">
+                <svg className="w-7 h-7 sm:w-8 sm:h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="square" strokeLinejoin="miter" d="M12 2L2 22h20L12 2z" />
+                  <path strokeLinecap="square" strokeLinejoin="miter" d="M12 16v.01" />
                 </svg>
               </div>
-              <h2 className="mb-3 text-xl font-bold text-white">2. How We Use Your Location</h2>
-              <p className="text-sm leading-relaxed text-white/60">
-                We only check your location at the exact moment you submit a report so the city knows where to send the repair team. We do not track your phone or follow where you go.
-              </p>
+              <div>
+                <h2 className="mb-2 sm:mb-3 font-pixel text-base sm:text-lg text-[#113320] uppercase">2. YOUR LOCATION</h2>
+                <p className="font-sans text-xs sm:text-sm leading-relaxed text-[#113320]/80 font-medium">
+                  We only check your location at the exact moment you submit a report so the city knows where to send the repair team. We do not track your phone or follow where you go.
+                </p>
+              </div>
             </div>
 
             {/* 3. Photos */}
-            <div className="group border border-white/10 bg-[#0b110d] p-8 transition-all hover:border-green-400/30 hover:bg-white/[0.02]">
-              <div className="mb-6 flex h-12 w-12 items-center justify-center border border-white/10 bg-black text-green-400 transition-colors group-hover:border-green-400/50">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+            <div className="border-2 border-[#113320] bg-white p-5 sm:p-8 shadow-[5px_5px_0px_#113320] sm:shadow-[8px_8px_0px_#113320] flex gap-4 sm:gap-6">
+              <div className="hidden sm:flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center border-2 border-[#113320] bg-[#e2f9e1] text-[#113320]">
+                <svg className="w-7 h-7 sm:w-8 sm:h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" />
                 </svg>
               </div>
-              <h2 className="mb-3 text-xl font-bold text-white">3. Your Photos</h2>
-              <p className="text-sm leading-relaxed text-white/60">
-                Any pictures you take or upload are securely stored. They are only shared with the city workers who need to see the problem in order to fix it safely and quickly.
-              </p>
+              <div>
+                <h2 className="mb-2 sm:mb-3 font-pixel text-base sm:text-lg text-[#113320] uppercase">3. PHOTO UPLOADS</h2>
+                <p className="font-sans text-xs sm:text-sm leading-relaxed text-[#113320]/80 font-medium">
+                  Any pictures you take or upload are securely stored. They are only shared with the city workers who need to see the problem in order to fix it safely and quickly.
+                </p>
+              </div>
             </div>
 
             {/* 4. Sharing */}
-            <div className="group border border-white/10 bg-[#0b110d] p-8 transition-all hover:border-green-400/30 hover:bg-white/[0.02]">
-              <div className="mb-6 flex h-12 w-12 items-center justify-center border border-white/10 bg-black text-green-400 transition-colors group-hover:border-green-400/50">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+            <div className="border-2 border-[#113320] bg-white p-5 sm:p-8 shadow-[5px_5px_0px_#113320] sm:shadow-[8px_8px_0px_#113320] flex gap-4 sm:gap-6">
+              <div className="hidden sm:flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center border-2 border-[#113320] bg-[#fa6355] text-white">
+                <svg className="w-7 h-7 sm:w-8 sm:h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="square" strokeLinejoin="miter" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
               </div>
-              <h2 className="mb-3 text-xl font-bold text-white">4. Who Sees Your Data</h2>
-              <p className="text-sm leading-relaxed text-white/60">
-                We will never sell or make money off your personal information. Your report is only shared with the specific city departments (like Public Works or Sanitation) assigned to solve the issue.
-              </p>
+              <div>
+                <h2 className="mb-2 sm:mb-3 font-pixel text-base sm:text-lg text-[#113320] uppercase">4. WHO SEES YOUR DATA</h2>
+                <p className="font-sans text-xs sm:text-sm leading-relaxed text-[#113320]/80 font-medium">
+                  We will never sell or make money off your personal information. Your report is only shared with the specific city departments (like Public Works or Sanitation) assigned to solve the issue.
+                </p>
+              </div>
             </div>
 
-            {/* 5. Security (Full Width at bottom) */}
-            <div className="group border border-white/10 bg-[#0b110d] p-8 transition-all hover:border-green-400/30 hover:bg-white/[0.02] md:col-span-2">
-              <div className="mb-6 flex h-12 w-12 items-center justify-center border border-white/10 bg-black text-green-400 transition-colors group-hover:border-green-400/50">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            {/* 5. Security */}
+            <div className="border-2 border-[#113320] bg-white p-5 sm:p-8 shadow-[5px_5px_0px_#113320] sm:shadow-[8px_8px_0px_#113320] flex gap-4 sm:gap-6">
+              <div className="hidden sm:flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center border-2 border-[#113320] bg-[#113320] text-white">
+                <svg className="w-7 h-7 sm:w-8 sm:h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0110 0v4" />
                 </svg>
               </div>
-              <h2 className="mb-3 text-xl font-bold text-white">5. Keeping Your Information Safe</h2>
-              <p className="text-sm leading-relaxed text-white/60 max-w-3xl">
-                All your information is locked and encrypted. Only verified city staff and system administrators can log in to see the details of who reported a problem. We take protecting your identity as seriously as we take fixing the community.
-              </p>
+              <div>
+                <h2 className="mb-2 sm:mb-3 font-pixel text-base sm:text-lg text-[#113320] uppercase">5. KEEPING YOU SAFE</h2>
+                <p className="font-sans text-xs sm:text-sm leading-relaxed text-[#113320]/80 font-medium">
+                  All your information is locked and encrypted. Only verified city staff and system administrators can log in to see the details of who reported a problem. We take protecting your identity as seriously as we take fixing the community.
+                </p>
+              </div>
             </div>
-            
           </div>
 
           {/* Footer Contact Line */}
-          <div className="mt-16 flex flex-col items-center justify-center text-center border-t border-white/10 pt-10">
-            <p className="text-sm text-white/50 mb-3">
+          <div className="mt-16 flex flex-col items-center justify-center text-center border-t-2 border-[#113320]/20 pt-10">
+            <p className="font-sans text-sm font-bold text-[#113320]/70 mb-4">
               Still have questions about how we protect your privacy?
             </p>
             <a 
               href="/contact" 
-              className="inline-flex items-center gap-2 border border-white/20 bg-white/5 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-white hover:text-black"
+              className="inline-block border-2 border-[#113320] bg-white px-8 py-3 font-sans text-xs font-bold text-[#113320] uppercase shadow-retro hover:shadow-retro-hover transition-shadow"
             >
-              Contact US
-              <span className="text-lg leading-none">→</span>
+              CONTACT US →
             </a>
           </div>
 
         </div>
-      </div>
+      </main>
 
       <Footer />
-    </main>
+    </div>
   );
 }

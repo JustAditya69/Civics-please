@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "Civics Please",
+    "slug": "civics-please",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "civicsplease",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#e2f9e1"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Civics Please requires camera access to attach photo evidence of civic issues.",
+        "NSLocationWhenInUseUsageDescription": "Civics Please needs your location to pinpoint the exact site of reported civic problems."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#e2f9e1",
+        "foregroundImage": "./assets/icon.png"
+      },
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

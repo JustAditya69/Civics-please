@@ -1,190 +1,67 @@
 const HowItWorks = () => {
   return (
-    <section
-      id="how-it-works"
-      className="relative w-full overflow-hidden bg-black py-20 lg:py-24"
-    >
-      {/* Background Glow */}
-      <div className="pointer-events-none absolute left-1/2 top-0 -z-0 h-[350px] w-[350px] -translate-x-1/2 rounded-full bg-green-500/5 blur-[120px]" />
-
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6">
-
-        {/* HEADER */}
-        <div className="max-w-3xl">
-
-          <div className="mb-5 flex items-center gap-3">
-            <span className="h-px w-10 bg-green-400" />
-
-            <p className="text-sm font-medium tracking-[0.2em] text-green-400">
-              HOW IT WORKS
-            </p>
-          </div>
-
-          <h2 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-            From everyday problems
-            <br />
-
-            <span className="text-white/40">
-              to real change.
-            </span>
-          </h2>
-
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-white/50">
-            Civics Please makes it simple to report problems in your
-            community, follow their progress, and make sure your voice
-            leads to action.
-          </p>
-
-        </div>
-
-
-        {/* STEPS */}
-
-        <div className="relative mt-14">
-
-          {/* Connecting Line */}
-          <div className="absolute left-0 right-0 top-10 hidden lg:block">
-
-            <div className="h-px w-full bg-white/10" />
-
-            {/* Animated Bold Arrow */}
-            <div className="absolute top-1/2 -translate-y-1/2 animate-[moveArrow_6s_linear_infinite]">
-              <div className="h-4 w-4 rotate-45 border-r-4 border-t-4 border-green-400" />
+    <section id="how-it-works" className="relative w-full py-10 sm:py-16 lg:py-24 z-10 border-t-2 border-b-2 border-[#113320]">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
+        <div className="grid grid-cols-1 gap-8 sm:gap-10 md:grid-cols-3">
+          
+          {/* STEP 01 */}
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3">
+              <span className="font-pixel text-lg text-[#fa6355]">01</span>
+              <span className="text-2xl">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#eab308" strokeWidth="2" strokeLinecap="square">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </span>
             </div>
-
-          </div>
-
-
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
-
-            {/* STEP 01 */}
-
-            <div className="group relative">
-
-              <div className="relative z-10 mb-7 flex h-20 w-20 items-center justify-center border border-green-400/30 bg-black text-xl font-semibold text-green-400 transition-all duration-300 group-hover:border-green-400 group-hover:bg-green-400 group-hover:text-black">
-                01
-              </div>
-
-              <p className="text-xs font-medium tracking-[0.2em] text-white/30">
-                SPOT IT
-              </p>
-
-              <h3 className="mt-3 text-2xl font-semibold text-white">
-                See a problem?
-              </h3>
-
-              <p className="mt-3 text-sm leading-7 text-white/45">
-                Notice a pothole, broken street light, overflowing
-                garbage, water leak, or another civic issue?
-              </p>
-
-            </div>
-
-
-            {/* STEP 02 */}
-
-            <div className="group relative">
-
-              <div className="relative z-10 mb-7 flex h-20 w-20 items-center justify-center border border-green-400/30 bg-black text-xl font-semibold text-green-400 transition-all duration-300 group-hover:border-green-400 group-hover:bg-green-400 group-hover:text-black">
-                02
-              </div>
-
-              <p className="text-xs font-medium tracking-[0.2em] text-white/30">
-                REPORT IT
-              </p>
-
-              <h3 className="mt-3 text-2xl font-semibold text-white">
-                Tell us about it.
-              </h3>
-
-              <p className="mt-3 text-sm leading-7 text-white/45">
-                Upload a photo, describe the issue, and share its
-                location. Reporting should take less than a minute.
-              </p>
-
-            </div>
-
-
-            {/* STEP 03 */}
-
-            <div className="group relative">
-
-              <div className="relative z-10 mb-7 flex h-20 w-20 items-center justify-center border border-green-400/30 bg-black text-xl font-semibold text-green-400 transition-all duration-300 group-hover:border-green-400 group-hover:bg-green-400 group-hover:text-black">
-                03
-              </div>
-
-              <p className="text-xs font-medium tracking-[0.2em] text-white/30">
-                TRACK IT
-              </p>
-
-              <h3 className="mt-3 text-2xl font-semibold text-white">
-                Follow the progress.
-              </h3>
-
-              <p className="mt-3 text-sm leading-7 text-white/45">
-                Get updates as your report moves from submitted to
-                reviewed, assigned, and eventually resolved.
-              </p>
-
-            </div>
-
-
-            {/* STEP 04 */}
-
-            <div className="group relative">
-
-              <div className="relative z-10 mb-7 flex h-20 w-20 items-center justify-center border border-green-400/30 bg-black text-xl font-semibold text-green-400 transition-all duration-300 group-hover:border-green-400 group-hover:bg-green-400 group-hover:text-black">
-                04
-              </div>
-
-              <p className="text-xs font-medium tracking-[0.2em] text-white/30">
-                MAKE AN IMPACT
-              </p>
-
-              <h3 className="mt-3 text-2xl font-semibold text-white">
-                See the difference.
-              </h3>
-
-              <p className="mt-3 text-sm leading-7 text-white/45">
-                When an issue gets fixed, everyone benefits. Your
-                report becomes a small step toward a better community.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        {/* CTA */}
-
-        <div className="mt-16 border border-white/10 bg-white/[0.03] px-8 py-8 backdrop-blur-md md:flex md:items-center md:justify-between">
-
-          <div>
-
-            <p className="text-sm font-medium text-green-400">
-              READY TO MAKE A DIFFERENCE?
-            </p>
-
-            <h3 className="mt-2 text-2xl font-semibold text-white sm:text-3xl">
-              Your next report could make a difference.
+            <h3 className="font-pixel text-lg text-[#113320] uppercase">
+              PIN THE SPOT
             </h3>
-
+            <p className="font-sans text-sm text-[#113320]/70">
+              Use your location or place the marker yourself.
+            </p>
           </div>
 
-          <a
-            href="/report"
-            className="mt-5 inline-flex border border-white/20 bg-transparent px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:text-black md:mt-0"
-          >
-            Report an Issue
-            <span className="ml-2">
-              →
-            </span>
-          </a>
+          {/* STEP 02 */}
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3">
+              <span className="font-pixel text-lg text-[#fa6355]">02</span>
+              <span className="text-2xl">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#eab308" strokeWidth="2" strokeLinecap="square">
+                  <rect x="3" y="8" width="18" height="14" rx="2" ry="2"></rect>
+                  <path d="M7 8v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"></path>
+                  <circle cx="12" cy="14" r="3"></circle>
+                </svg>
+              </span>
+            </div>
+            <h3 className="font-pixel text-lg text-[#113320] uppercase">
+              ADD EVIDENCE
+            </h3>
+            <p className="font-sans text-sm text-[#113320]/70">
+              A clear photo helps the crew prepare.
+            </p>
+          </div>
+
+          {/* STEP 03 */}
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3">
+              <span className="font-pixel text-lg text-[#fa6355]">03</span>
+              <span className="text-2xl">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#eab308" strokeWidth="2" strokeLinecap="square">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </span>
+            </div>
+            <h3 className="font-pixel text-lg text-[#113320] uppercase">
+              FOLLOW THE FIX
+            </h3>
+            <p className="font-sans text-sm text-[#113320]/70">
+              Save your reference and watch the status change.
+            </p>
+          </div>
 
         </div>
-
       </div>
     </section>
   );

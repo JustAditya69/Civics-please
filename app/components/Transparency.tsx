@@ -1,304 +1,154 @@
 const Transparency = () => {
   return (
-    <section
-      id="transparency"
-      className="relative w-full overflow-hidden bg-black py-16 lg:py-20"
-    >
-      {/* Background Glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-500/5 blur-[130px]" />
-
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6">
-
+    <section id="transparency" className="relative w-full py-12 sm:py-16 lg:py-24 z-10 border-t-2 border-[#113320]">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
+        
         {/* HEADER */}
-
-        <div className="max-w-3xl">
-
-          <div className="mb-5 flex items-center gap-3">
-            <span className="h-px w-10 bg-green-400" />
-
-            <p className="text-sm font-medium tracking-[0.2em] text-green-400">
-              TRANSPARENCY
-            </p>
-          </div>
-
-          <h2 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Never wonder
-            <br />
-
-            <span className="text-white/40">
-              what happened to your report.
-            </span>
-          </h2>
-
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-white/50">
-            Every report has a journey. Civics Please keeps you
-            informed at every stage — from the moment you submit
-            an issue until it gets resolved.
+        <div className="max-w-3xl mb-8 sm:mb-14">
+          <p className="font-sans text-[10px] font-bold tracking-[0.2em] text-[#fa6355] uppercase mb-3 sm:mb-4">
+            TRANSPARENCY
           </p>
-
+          <h2 className="font-pixel text-2xl sm:text-3xl md:text-5xl text-[#113320] uppercase leading-snug sm:leading-tight mb-4">
+            NEVER WONDER <br />
+            <span className="text-[#fa6355]">WHAT HAPPENED.</span>
+          </h2>
+          <p className="font-sans text-sm sm:text-lg text-[#113320]/80">
+            Every report has a journey. Civics Please keeps you informed at every stage — from the moment you submit an issue until it gets resolved.
+          </p>
         </div>
-
 
         {/* MAIN CONTENT */}
-
-        <div className="mt-14 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
+        <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-2 lg:items-center">
 
           {/* LEFT — STATUS TIMELINE */}
-
-          <div className="border border-white/10 bg-white/[0.02] p-7 sm:p-9">
-
-            <div className="flex items-center justify-between border-b border-white/10 pb-6">
-
+          <div className="border-2 border-[#113320] bg-white p-5 sm:p-8 shadow-[5px_5px_0px_#113320] sm:shadow-[8px_8px_0px_#113320]">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b-2 border-[#113320] pb-4 sm:pb-6 mb-6 sm:mb-8">
               <div>
-                <p className="text-xs tracking-[0.2em] text-white/30">
+                <p className="font-sans text-[10px] font-bold tracking-widest text-[#fa6355] uppercase mb-1">
                   REPORT #CP-10482
                 </p>
-
-                <h3 className="mt-2 text-xl font-semibold text-white">
-                  Broken Street Light
+                <h3 className="font-pixel text-lg sm:text-xl text-[#113320] uppercase">
+                  BROKEN STREET LIGHT
                 </h3>
               </div>
-
-              <span className="border border-green-400/20 bg-green-400/5 px-3 py-1.5 text-xs font-medium text-green-400">
+              <span className="mt-3 sm:mt-0 border-2 border-[#113320] bg-[#f4ebd6] px-3 py-1 font-sans text-[10px] font-bold text-[#113320] uppercase tracking-widest shadow-[2px_2px_0px_#113320]">
                 IN PROGRESS
               </span>
-
             </div>
-
 
             {/* Timeline */}
-
-            <div className="mt-8">
-
+            <div className="space-y-0">
+              
               {/* Submitted */}
-
-              <div className="relative flex gap-5 pb-10">
-
-                <div className="relative">
-
-                  <div className="flex h-8 w-8 items-center justify-center border border-green-400 bg-green-400 text-sm font-bold text-black">
+              <div className="relative flex gap-6 pb-12">
+                <div className="relative flex flex-col items-center">
+                  <div className="flex h-8 w-8 items-center justify-center border-2 border-[#113320] bg-[#bce3c5] text-sm font-bold text-[#113320] z-10 shadow-[2px_2px_0px_#113320]">
                     ✓
                   </div>
-
-                  <div className="absolute left-1/2 top-8 h-full w-px -translate-x-1/2 bg-green-400/30" />
-
+                  <div className="absolute top-8 bottom-[-12px] w-1 bg-[#113320]" />
                 </div>
-
                 <div>
-
-                  <p className="text-sm font-semibold text-white">
-                    Report Submitted
-                  </p>
-
-                  <p className="mt-1 text-xs text-white/35">
-                    Your issue was successfully received.
-                  </p>
-
-                  <p className="mt-2 text-xs text-white/25">
-                    Today · 09:42 AM
-                  </p>
-
+                  <p className="font-pixel text-sm text-[#113320] uppercase mb-1">Report Submitted</p>
+                  <p className="font-sans text-xs text-[#113320]/70 mb-2">Your issue was successfully received.</p>
+                  <p className="font-sans text-[10px] font-bold tracking-widest text-[#fa6355] uppercase">Today · 09:42 AM</p>
                 </div>
-
               </div>
-
 
               {/* Reviewed */}
-
-              <div className="relative flex gap-5 pb-10">
-
-                <div className="relative">
-
-                  <div className="flex h-8 w-8 items-center justify-center border border-green-400 bg-green-400 text-sm font-bold text-black">
+              <div className="relative flex gap-6 pb-12">
+                <div className="relative flex flex-col items-center">
+                  <div className="flex h-8 w-8 items-center justify-center border-2 border-[#113320] bg-[#bce3c5] text-sm font-bold text-[#113320] z-10 shadow-[2px_2px_0px_#113320]">
                     ✓
                   </div>
-
-                  <div className="absolute left-1/2 top-8 h-full w-px -translate-x-1/2 bg-green-400/30" />
-
+                  <div className="absolute top-8 bottom-[-12px] w-1 bg-[#113320]" />
                 </div>
-
                 <div>
-
-                  <p className="text-sm font-semibold text-white">
-                    Report Reviewed
-                  </p>
-
-                  <p className="mt-1 text-xs text-white/35">
-                    The issue has been verified.
-                  </p>
-
-                  <p className="mt-2 text-xs text-white/25">
-                    Today · 11:18 AM
-                  </p>
-
+                  <p className="font-pixel text-sm text-[#113320] uppercase mb-1">Report Reviewed</p>
+                  <p className="font-sans text-xs text-[#113320]/70 mb-2">The issue has been verified.</p>
+                  <p className="font-sans text-[10px] font-bold tracking-widest text-[#fa6355] uppercase">Today · 11:18 AM</p>
                 </div>
-
               </div>
-
 
               {/* Assigned */}
-
-              <div className="relative flex gap-5 pb-10">
-
-                <div className="relative">
-
-                  <div className="flex h-8 w-8 items-center justify-center border border-green-400 bg-green-400 text-sm font-bold text-black">
+              <div className="relative flex gap-6 pb-12">
+                <div className="relative flex flex-col items-center">
+                  <div className="flex h-8 w-8 items-center justify-center border-2 border-[#113320] bg-[#bce3c5] text-sm font-bold text-[#113320] z-10 shadow-[2px_2px_0px_#113320]">
                     ✓
                   </div>
-
-                  <div className="absolute left-1/2 top-8 h-full w-px -translate-x-1/2 bg-white/10" />
-
+                  <div className="absolute top-8 bottom-[-12px] w-1 bg-[#113320]/20" />
                 </div>
-
                 <div>
-
-                  <p className="text-sm font-semibold text-white">
-                    Assigned
-                  </p>
-
-                  <p className="mt-1 text-xs text-white/35">
-                    The issue has been assigned for resolution.
-                  </p>
-
-                  <p className="mt-2 text-xs text-white/25">
-                    Today · 01:35 PM
-                  </p>
-
+                  <p className="font-pixel text-sm text-[#113320] uppercase mb-1">Assigned</p>
+                  <p className="font-sans text-xs text-[#113320]/70 mb-2">The issue has been assigned for resolution.</p>
+                  <p className="font-sans text-[10px] font-bold tracking-widest text-[#fa6355] uppercase">Today · 01:35 PM</p>
                 </div>
-
               </div>
-
 
               {/* Resolved */}
-
-              <div className="relative flex gap-5">
-
-                <div>
-
-                  <div className="flex h-8 w-8 items-center justify-center border border-white/10 bg-white/[0.03] text-sm text-white/20">
+              <div className="relative flex gap-6">
+                <div className="relative flex flex-col items-center">
+                  <div className="flex h-8 w-8 items-center justify-center border-2 border-[#113320] bg-white text-sm font-bold text-[#113320]/40 z-10">
                     4
                   </div>
-
                 </div>
-
                 <div>
-
-                  <p className="text-sm font-semibold text-white/40">
-                    Resolved
-                  </p>
-
-                  <p className="mt-1 text-xs text-white/25">
-                    Waiting for the issue to be resolved.
-                  </p>
-
+                  <p className="font-pixel text-sm text-[#113320]/40 uppercase mb-1">Resolved</p>
+                  <p className="font-sans text-xs text-[#113320]/50">Waiting for the issue to be resolved.</p>
                 </div>
-
               </div>
 
             </div>
-
           </div>
 
-
           {/* RIGHT — EXPLANATION */}
-
-          <div>
-
-            <div className="space-y-8">
-
+          <div className="flex flex-col justify-center">
+            <div className="space-y-10">
               {/* Point 01 */}
-
-              <div className="flex gap-5">
-
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center border border-white/10 text-xs font-semibold text-green-400">
-                  01
+              <div className="flex gap-6">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center border-2 border-[#113320] bg-[#fa6355] font-pixel text-sm text-white shadow-[2px_2px_0px_#113320]">
+                  1
                 </span>
-
                 <div>
-
-                  <h3 className="text-lg font-semibold text-white">
-                    Know what's happening
-                  </h3>
-
-                  <p className="mt-2 text-sm leading-7 text-white/40">
-                    See exactly where your report is in the
-                    resolution process.
-                  </p>
-
+                  <h3 className="font-pixel text-sm text-[#113320] uppercase mb-2">Know what's happening</h3>
+                  <p className="font-sans text-sm text-[#113320]/70 leading-relaxed">See exactly where your report is in the resolution process.</p>
                 </div>
-
               </div>
-
 
               {/* Point 02 */}
-
-              <div className="flex gap-5">
-
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center border border-white/10 text-xs font-semibold text-green-400">
-                  02
+              <div className="flex gap-6">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center border-2 border-[#113320] bg-[#fa6355] font-pixel text-sm text-white shadow-[2px_2px_0px_#113320]">
+                  2
                 </span>
-
                 <div>
-
-                  <h3 className="text-lg font-semibold text-white">
-                    Get meaningful updates
-                  </h3>
-
-                  <p className="mt-2 text-sm leading-7 text-white/40">
-                    Receive updates when your report is reviewed,
-                    assigned, or resolved.
-                  </p>
-
+                  <h3 className="font-pixel text-sm text-[#113320] uppercase mb-2">Get meaningful updates</h3>
+                  <p className="font-sans text-sm text-[#113320]/70 leading-relaxed">Receive updates when your report is reviewed, assigned, or resolved.</p>
                 </div>
-
               </div>
-
 
               {/* Point 03 */}
-
-              <div className="flex gap-5">
-
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center border border-white/10 text-xs font-semibold text-green-400">
-                  03
+              <div className="flex gap-6">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center border-2 border-[#113320] bg-[#fa6355] font-pixel text-sm text-white shadow-[2px_2px_0px_#113320]">
+                  3
                 </span>
-
                 <div>
-
-                  <h3 className="text-lg font-semibold text-white">
-                    Build trust
-                  </h3>
-
-                  <p className="mt-2 text-sm leading-7 text-white/40">
-                    Transparent progress creates accountability
-                    between citizens and authorities.
-                  </p>
-
+                  <h3 className="font-pixel text-sm text-[#113320] uppercase mb-2">Build trust</h3>
+                  <p className="font-sans text-sm text-[#113320]/70 leading-relaxed">Transparent progress creates accountability between citizens and authorities.</p>
                 </div>
-
               </div>
-
             </div>
-
 
             {/* Quote / Statement */}
-
-            <div className="mt-10 border-l border-green-400/50 pl-5">
-
-              <p className="text-lg leading-8 text-white/60">
-                "A report shouldn't disappear after you press
-                submit."
+            <div className="mt-12 border-l-4 border-[#fa6355] pl-6 py-2">
+              <p className="font-sans text-lg font-bold italic text-[#113320]">
+                "A report shouldn't disappear after you press submit."
               </p>
-
-              <p className="mt-3 text-xs tracking-[0.15em] text-green-400">
+              <p className="mt-3 font-sans text-[10px] font-bold tracking-[0.2em] text-[#fa6355] uppercase">
                 CIVICS PLEASE
               </p>
-
             </div>
-
           </div>
 
         </div>
-
       </div>
     </section>
   );

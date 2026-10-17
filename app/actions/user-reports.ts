@@ -1,15 +1,24 @@
 "use server";
 
 import { prisma } from "@/app/lib/prisma";
+import { cookies } from "next/headers";
 
-export async function getUserReports(userId: string) {
+export async function getUserReports(requestedUserId?: string) {
   try {
-    if (!userId || userId.trim() === "") {
-      return { success: false, error: "Unauthorized. Please log in." };
+    const cookieStore = await cookies();
+    const sessionUserId = cookieStore.get("user_session")?.value;
+
+    if (!sessionUserId) {
+      return { success: false, error: "Unauthorized. Please log in to view your reports." };
     }
 
+    // Prevents IDOR: Users can only query their own reports unless authenticated as Admin
+    const effectiveUserId = (sessionUserId === "ADMIN_ROOT_USER" && requestedUserId)
+      ? requestedUserId
+      : sessionUserId;
+
     const reports = await prisma.report.findMany({
-      where: { userId: userId.trim() },
+      where: { userId: effectiveUserId },
       orderBy: { createdAt: "desc" },
     });
 

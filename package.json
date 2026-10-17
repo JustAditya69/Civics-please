@@ -6,9 +6,16 @@
     "build": "prisma generate && next build",
     "dev": "next dev --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "mobile": "npm --prefix mobile run start",
+    "mobile:android": "npm --prefix mobile run android",
+    "mobile:ios": "npm --prefix mobile run ios"
   },
   "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/cli": "^8.5.2",
+    "@capacitor/core": "^8.5.2",
+    "@capacitor/ios": "^8.5.2",
     "@prisma/adapter-pg": "^7.9.1",
     "@prisma/client": "^7.9.1",
     "@types/leaflet": "^1.9.22",
@@ -32,6 +39,4 @@
     "tailwindcss": "^4",
     "typescript": "^5"
   }
-
 }
-

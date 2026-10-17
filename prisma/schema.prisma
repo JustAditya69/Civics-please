@@ -21,6 +21,7 @@ model Report {
   category    String
   title       String
   description String
+  imageUrl    String?
   latitude    String?
   longitude   String?
   address     String?

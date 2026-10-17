@@ -1,7 +1,6 @@
 // app/components/Impact.tsx
 import React from "react";
 
-// Define the shape of the data we expect from the server
 interface ImpactStats {
   total: number;
   resolved: number;
@@ -18,7 +17,6 @@ interface ImpactStats {
 }
 
 const Impact = ({ stats }: { stats: ImpactStats }) => {
-  // Helper math to calculate percentages safely (avoid dividing by zero)
   const resolutionRate = stats.total > 0 ? Math.round((stats.resolved / stats.total) * 100) : 0;
   
   const getCategoryPercent = (categoryCount: number) => {
@@ -31,160 +29,149 @@ const Impact = ({ stats }: { stats: ImpactStats }) => {
   const waterPct = getCategoryPercent(stats.categories.water);
 
   return (
-    <section id="impact" className="relative w-full overflow-hidden bg-black py-20 lg:py-24">
-      {/* Background Glow */}
-      <div className="pointer-events-none absolute right-0 top-1/4 h-[400px] w-[400px] rounded-full bg-green-500/5 blur-[130px]" />
-
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6">
+    <section id="impact" className="relative w-full py-12 sm:py-16 lg:py-24 z-10 border-t-2 border-[#113320]">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
         {/* HEADER */}
-        <div className="max-w-3xl">
-          <div className="mb-5 flex items-center gap-3">
-            <span className="h-px w-10 bg-green-400" />
-            <p className="text-sm font-medium tracking-[0.2em] text-green-400">OUR IMPACT</p>
-          </div>
-          <h2 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Small reports.
-            <br />
-            <span className="text-white/40">Big difference.</span>
+        <div className="max-w-3xl mb-8 sm:mb-12">
+          <p className="font-sans text-[10px] font-bold tracking-[0.2em] text-[#fa6355] uppercase mb-3 sm:mb-4">
+            OUR IMPACT
+          </p>
+          <h2 className="font-pixel text-2xl sm:text-3xl md:text-5xl text-[#113320] uppercase leading-snug sm:leading-tight">
+            SMALL REPORTS. <br />
+            <span className="text-[#fa6355]">BIG DIFFERENCE.</span>
           </h2>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-white/50">
+          <p className="mt-4 sm:mt-5 max-w-2xl font-sans text-sm sm:text-lg text-[#113320]/80">
             Every report is a step toward a cleaner, safer, and better community.
           </p>
         </div>
 
         {/* TOP STATS GRID */}
-        <div className="mt-14 grid grid-cols-1 border border-white/10 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="border-b border-white/10 p-7 transition-all duration-300 hover:bg-white/[0.03] sm:border-r">
-            <p className="text-sm tracking-widest text-white/30">REPORTS</p>
-            <h3 className="mt-5 text-5xl font-bold tracking-tight text-white">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
+          <div className="border-2 border-[#113320] bg-white p-4 sm:p-6 shadow-[3px_3px_0px_#113320] sm:shadow-[4px_4px_0px_#113320]">
+            <p className="font-sans text-[9px] sm:text-[10px] font-bold tracking-widest text-[#113320]/60 uppercase mb-1 sm:mb-2">REPORTS</p>
+            <h3 className="font-pixel text-xl sm:text-3xl lg:text-4xl text-[#113320]">
               {stats.total.toLocaleString()}
             </h3>
-            <p className="mt-3 text-sm text-white/40">Civic issues reported.</p>
+            <p className="font-sans text-[11px] sm:text-xs text-[#113320]/70 mt-1 sm:mt-2">Civic issues reported.</p>
           </div>
 
-          <div className="border-b border-white/10 p-7 transition-all duration-300 hover:bg-white/[0.03] lg:border-r">
-            <p className="text-sm tracking-widest text-white/30">RESOLVED</p>
-            <h3 className="mt-5 text-5xl font-bold tracking-tight text-white">
+          <div className="border-2 border-[#113320] bg-[#f4ebd6] p-4 sm:p-6 shadow-[3px_3px_0px_#113320] sm:shadow-[4px_4px_0px_#113320]">
+            <p className="font-sans text-[9px] sm:text-[10px] font-bold tracking-widest text-[#113320]/60 uppercase mb-1 sm:mb-2">RESOLVED</p>
+            <h3 className="font-pixel text-xl sm:text-3xl lg:text-4xl text-[#fa6355]">
               {stats.resolved.toLocaleString()}
             </h3>
-            <p className="mt-3 text-sm text-white/40">Problems successfully resolved.</p>
+            <p className="font-sans text-[11px] sm:text-xs text-[#113320]/70 mt-1 sm:mt-2">Problems resolved.</p>
           </div>
 
-          <div className="border-b border-white/10 p-7 transition-all duration-300 hover:bg-white/[0.03] sm:border-r lg:border-r">
-            <p className="text-sm tracking-widest text-white/30">ACTIVE DISTRICTS</p>
-            <h3 className="mt-5 text-5xl font-bold tracking-tight text-white">
-              1<span className="text-green-400">+</span>
+          <div className="border-2 border-[#113320] bg-white p-4 sm:p-6 shadow-[3px_3px_0px_#113320] sm:shadow-[4px_4px_0px_#113320]">
+            <p className="font-sans text-[9px] sm:text-[10px] font-bold tracking-widest text-[#113320]/60 uppercase mb-1 sm:mb-2">ACTIVE DISTRICTS</p>
+            <h3 className="font-pixel text-xl sm:text-3xl lg:text-4xl text-[#113320]">
+              1<span className="text-[#fa6355]">+</span>
             </h3>
-            <p className="mt-3 text-sm text-white/40">Communities participating.</p>
+            <p className="font-sans text-[11px] sm:text-xs text-[#113320]/70 mt-1 sm:mt-2">Communities active.</p>
           </div>
 
-          <div className="border-b border-white/10 p-7 transition-all duration-300 hover:bg-white/[0.03]">
-            <p className="text-sm tracking-widest text-white/30">RESOLUTION RATE</p>
-            <h3 className="mt-5 text-5xl font-bold tracking-tight text-green-400">
+          <div className="border-2 border-[#113320] bg-[#bce3c5] p-4 sm:p-6 shadow-[3px_3px_0px_#113320] sm:shadow-[4px_4px_0px_#113320]">
+            <p className="font-sans text-[9px] sm:text-[10px] font-bold tracking-widest text-[#113320]/60 uppercase mb-1 sm:mb-2">RESOLUTION RATE</p>
+            <h3 className="font-pixel text-xl sm:text-3xl lg:text-4xl text-[#113320]">
               {resolutionRate}%
             </h3>
-            <p className="mt-3 text-sm text-white/40">Overall issues resolved.</p>
+            <p className="font-sans text-[11px] sm:text-xs text-[#113320]/70 mt-1 sm:mt-2">Issues resolved.</p>
           </div>
         </div>
 
         {/* DASHBOARD PREVIEW */}
-        <div className="mt-12 grid grid-cols-1 gap-px border border-white/10 bg-white/10 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           
           {/* Category Activity Progress Bars */}
-          <div className="bg-black p-7 lg:col-span-2">
-            <div className="flex items-center justify-between">
+          <div className="border-2 border-[#113320] bg-white p-5 sm:p-8 shadow-[5px_5px_0px_#113320] sm:shadow-[8px_8px_0px_#113320] lg:col-span-2 relative overflow-hidden">
+            <div className="flex items-center justify-between mb-6 sm:mb-8 relative z-10">
               <div>
-                <p className="text-xs tracking-[0.2em] text-white/30">COMMUNITY ACTIVITY</p>
-                <h3 className="mt-2 text-2xl font-semibold text-white">Category Breakdown</h3>
+                <p className="font-sans text-[10px] font-bold tracking-widest text-[#fa6355] uppercase mb-1">COMMUNITY ACTIVITY</p>
+                <h3 className="font-pixel text-lg sm:text-xl text-[#113320] uppercase">Category Breakdown</h3>
               </div>
-              <div className="flex items-center gap-2 text-sm text-green-400">
-                <span className="h-2 w-2 animate-pulse rounded-full bg-green-400" />
+              <div className="flex items-center gap-2 font-sans text-xs font-bold text-[#fa6355] uppercase">
+                <span className="h-2 w-2 animate-pulse bg-[#fa6355]" />
                 LIVE
               </div>
             </div>
 
-            <div className="mt-8 space-y-6">
+            <div className="space-y-5 sm:space-y-6 relative z-10">
               {/* Road */}
               <div>
-                <div className="mb-2 flex justify-between text-sm">
-                  <span className="text-white/60">Roads & Potholes</span>
-                  <span className="text-white/30">{roadPct}%</span>
+                <div className="mb-2 flex justify-between font-sans text-xs font-bold uppercase text-[#113320]">
+                  <span>Roads & Potholes</span>
+                  <span>{roadPct}%</span>
                 </div>
-                <div className="h-1.5 w-full bg-white/10">
-                  <div className="h-full bg-green-400 transition-all duration-1000" style={{ width: `${roadPct}%` }} />
+                <div className="h-4 w-full border-2 border-[#113320] bg-[#e2f9e1]">
+                  <div className="h-full bg-[#fa6355] border-r-2 border-[#113320]" style={{ width: `${roadPct}%` }} />
                 </div>
               </div>
 
               {/* Garbage */}
               <div>
-                <div className="mb-2 flex justify-between text-sm">
-                  <span className="text-white/60">Garbage & Waste</span>
-                  <span className="text-white/30">{garbagePct}%</span>
+                <div className="mb-2 flex justify-between font-sans text-xs font-bold uppercase text-[#113320]">
+                  <span>Garbage & Waste</span>
+                  <span>{garbagePct}%</span>
                 </div>
-                <div className="h-1.5 w-full bg-white/10">
-                  <div className="h-full bg-green-400 transition-all duration-1000" style={{ width: `${garbagePct}%` }} />
+                <div className="h-4 w-full border-2 border-[#113320] bg-[#e2f9e1]">
+                  <div className="h-full bg-[#fa6355] border-r-2 border-[#113320]" style={{ width: `${garbagePct}%` }} />
                 </div>
               </div>
 
               {/* Lights */}
               <div>
-                <div className="mb-2 flex justify-between text-sm">
-                  <span className="text-white/60">Street Lights</span>
-                  <span className="text-white/30">{lightPct}%</span>
+                <div className="mb-2 flex justify-between font-sans text-xs font-bold uppercase text-[#113320]">
+                  <span>Street Lights</span>
+                  <span>{lightPct}%</span>
                 </div>
-                <div className="h-1.5 w-full bg-white/10">
-                  <div className="h-full bg-green-400 transition-all duration-1000" style={{ width: `${lightPct}%` }} />
+                <div className="h-4 w-full border-2 border-[#113320] bg-[#e2f9e1]">
+                  <div className="h-full bg-[#fa6355] border-r-2 border-[#113320]" style={{ width: `${lightPct}%` }} />
                 </div>
               </div>
 
               {/* Water */}
               <div>
-                <div className="mb-2 flex justify-between text-sm">
-                  <span className="text-white/60">Water & Drainage</span>
-                  <span className="text-white/30">{waterPct}%</span>
+                <div className="mb-2 flex justify-between font-sans text-xs font-bold uppercase text-[#113320]">
+                  <span>Water & Drainage</span>
+                  <span>{waterPct}%</span>
                 </div>
-                <div className="h-1.5 w-full bg-white/10">
-                  <div className="h-full bg-green-400 transition-all duration-1000" style={{ width: `${waterPct}%` }} />
+                <div className="h-4 w-full border-2 border-[#113320] bg-[#e2f9e1]">
+                  <div className="h-full bg-[#fa6355] border-r-2 border-[#113320]" style={{ width: `${waterPct}%` }} />
                 </div>
               </div>
             </div>
+            {/* Grid graphic inside card */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(17,51,32,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(17,51,32,0.05)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none" />
           </div>
 
           {/* Monthly Stats Sidebar */}
-          <div className="bg-white/[0.02] p-7">
-            <p className="text-xs tracking-[0.2em] text-white/30">THIS MONTH</p>
-            <div className="mt-7 space-y-5">
-              <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                <span className="text-sm text-white/50">Reports Filed</span>
-                <span className="font-semibold text-white">{stats.thisMonthTotal.toLocaleString()}</span>
+          <div className="border-2 border-[#113320] bg-[#f4ebd6] p-5 sm:p-8 shadow-[5px_5px_0px_#113320] sm:shadow-[8px_8px_0px_#113320]">
+            <p className="font-sans text-[10px] font-bold tracking-widest text-[#fa6355] uppercase mb-4 sm:mb-6">THIS MONTH</p>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between border-b-2 border-[#113320]/20 pb-3 sm:pb-4">
+                <span className="font-sans text-xs sm:text-sm font-bold text-[#113320] uppercase">Reports Filed</span>
+                <span className="font-pixel text-base sm:text-lg text-[#113320]">{stats.thisMonthTotal.toLocaleString()}</span>
               </div>
-              <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                <span className="text-sm text-white/50">Resolved</span>
-                <span className="font-semibold text-green-400">{stats.thisMonthResolved.toLocaleString()}</span>
+              <div className="flex items-center justify-between border-b-2 border-[#113320]/20 pb-3 sm:pb-4">
+                <span className="font-sans text-xs sm:text-sm font-bold text-[#113320] uppercase">Resolved</span>
+                <span className="font-pixel text-base sm:text-lg text-[#fa6355]">{stats.thisMonthResolved.toLocaleString()}</span>
               </div>
-              <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                <span className="text-sm text-white/50">In Progress</span>
-                <span className="font-semibold text-white">{stats.thisMonthInProgress.toLocaleString()}</span>
+              <div className="flex items-center justify-between border-b-2 border-[#113320]/20 pb-3 sm:pb-4">
+                <span className="font-sans text-xs sm:text-sm font-bold text-[#113320] uppercase">In Progress</span>
+                <span className="font-pixel text-base sm:text-lg text-[#113320]">{stats.thisMonthInProgress.toLocaleString()}</span>
               </div>
             </div>
 
-            <div className="mt-10 border border-green-400/20 bg-green-400/5 p-5">
-              <p className="text-sm font-medium text-green-400">COMMUNITY IMPACT</p>
-              <p className="mt-2 text-sm leading-6 text-white/40">
+            <div className="mt-6 sm:mt-8 border-2 border-[#113320] bg-white p-3 sm:p-4">
+              <p className="font-sans text-[10px] sm:text-xs font-bold text-[#fa6355] uppercase mb-1 sm:mb-2">COMMUNITY IMPACT</p>
+              <p className="font-sans text-xs sm:text-sm leading-relaxed text-[#113320]">
                 Your reports help identify the problems that matter most to your community.
               </p>
             </div>
           </div>
         </div>
 
-        {/* BOTTOM MESSAGE */}
-        <div className="mt-16 text-center">
-          <p className="text-sm tracking-[0.15em] text-white/30">EVERY REPORT COUNTS</p>
-          <h3 className="mx-auto mt-3 max-w-2xl text-3xl font-semibold leading-tight text-white sm:text-4xl">
-            Better communities start with people who
-            <span className="text-green-400"> speak up.</span>
-          </h3>
-        </div>
       </div>
     </section>
   );

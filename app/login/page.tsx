@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { loginUser } from "../actions/auth";
 import Link from "next/link";
+import Navbar from "../components/Navbar";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -19,17 +20,13 @@ export default function LoginPage() {
       const result = await loginUser({ email, password });
 
       if (result.success && result.userId) {
-        // Save the user ID or token to localStorage
         localStorage.setItem("user_token", result.userId);
-
-        // DISPATCH EVENT SO FOOTER/NAVBAR UPDATES INSTANTLY
         window.dispatchEvent(new Event("auth_changed"));
 
-        // Check if authenticated account is admin
         if (result.isAdmin) {
-          window.location.href = "/admin"; // Route admin to command center
+          window.location.href = "/admin"; 
         } else {
-          window.location.href = "/"; // Route regular citizen to landing page
+          window.location.href = "/"; 
         }
       } else {
         setErrorMessage(result.error || "Invalid credentials.");
@@ -42,86 +39,105 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#050806] px-4 py-12 text-white flex items-center justify-center">
-      <div className="mx-auto max-w-md w-full">
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      <main className="flex-1 w-full px-4 sm:px-6 py-8 md:py-16 flex flex-col items-center justify-center">
         
-        <div className="mb-4 flex items-center justify-between border border-white/[0.08] bg-[#0a0f0c]/90 px-5 py-3 backdrop-blur-md">
-          <div className="flex items-center gap-3">
-            <span className="h-2 w-2 rounded-full bg-green-400 shadow-[0_0_12px_rgba(74,222,128,0.8)]" />
-            <span className="text-[10px] font-semibold tracking-[0.25em] text-white/50">CIVICS PLEASE</span>
-          </div>
-          <span className="text-[10px] tracking-[0.2em] text-white/30">SECURE LOGIN PORTAL</span>
-        </div>
-
-        <div className="border border-green-400/10 bg-[#0b110d] p-8 shadow-2xl space-y-6">
-          <div className="border-b border-white/10 pb-6 text-center">
-            <h1 className="text-2xl font-bold tracking-tight text-white">Sign In</h1>
-            <p className="mt-1 text-xs text-white/40">
+        <div className="w-full max-w-md">
+          {/* Header */}
+          <div className="mb-6 md:mb-8 text-center border-b-2 border-[#113320] pb-6">
+            <p className="font-sans text-[10px] font-bold tracking-[0.2em] text-[#fa6355] uppercase mb-3">
+              SECURE LOGIN PORTAL
+            </p>
+            <h1 className="font-pixel text-2xl sm:text-3xl md:text-4xl text-[#113320] uppercase leading-tight mb-2">
+              SIGN IN
+            </h1>
+            <p className="font-sans text-xs sm:text-sm text-[#113320]/70">
               Access citizen portal or municipal authority command center.
             </p>
           </div>
 
-          {errorMessage && (
-            <div className="border border-red-500/30 bg-red-500/10 p-3 text-center text-xs text-red-400">
-              {errorMessage}
-            </div>
-          )}
-
-          <form onSubmit={handleLogin} className="space-y-5">
-            <div>
-              <label className="block text-[9px] font-semibold uppercase tracking-[0.18em] text-white/30 mb-2">Email Address *</label>
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="aditya@example.com"
-                className="w-full border-b border-white/20 bg-transparent px-0 py-3 text-sm text-white outline-none focus:border-green-400"
-              />
-            </div>
-
-            <div>
-              <label className="block text-[9px] font-semibold uppercase tracking-[0.18em] text-white/30 mb-2">Password *</label>
-              <input
-                type="password"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
-                className="w-full border-b border-white/20 bg-transparent px-0 py-3 text-sm text-white outline-none focus:border-green-400"
-              />
+          <div className="border-2 border-[#113320] bg-white p-5 sm:p-8 shadow-[6px_6px_0px_#113320] sm:shadow-[8px_8px_0px_#113320]">
+            
+            {/* Quick Demo Fill Banner */}
+            <div className="border-2 border-[#113320] bg-[#f4ebd6] p-4 mb-6">
+              <div className="flex items-center justify-between gap-2 mb-2">
+                <span className="font-sans text-[10px] font-bold uppercase tracking-wider text-[#113320]">
+                  🔑 DEMO / ADMIN ACCESS
+                </span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setEmail("admin@civicsplease.gov");
+                    setPassword("AdminPassword123@");
+                    setErrorMessage("");
+                  }}
+                  className="border border-[#113320] bg-white px-2 py-1 font-sans text-[10px] font-bold uppercase text-[#fa6355] hover:bg-[#fa6355] hover:text-white transition-colors shadow-[1px_1px_0px_#113320]"
+                >
+                  Autofill Credentials
+                </button>
+              </div>
+              <p className="font-sans text-[11px] text-[#113320]/80">
+                Email: <span className="font-mono font-bold text-[#113320]">admin@civicsplease.gov</span>
+                <br />
+                Password: <span className="font-mono font-bold text-[#113320]">AdminPassword123@</span>
+              </p>
             </div>
 
-            <div className="pt-4 space-y-3">
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full border border-green-400 bg-green-400 py-4 text-xs font-semibold text-black transition-all hover:bg-green-300 disabled:opacity-50 uppercase tracking-wider"
+            {errorMessage && (
+              <div className="border-2 border-[#113320] bg-[#fa6355]/10 p-3 text-center text-xs text-[#fa6355] font-bold mb-6 uppercase">
+                {errorMessage}
+              </div>
+            )}
+
+            <form onSubmit={handleLogin} action="#" className="space-y-6">
+              <div>
+                <label className="block font-sans text-xs font-bold text-[#113320] uppercase mb-2">Email Address *</label>
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@example.com"
+                  className="w-full border-2 border-[#113320] bg-[#e2f9e1] px-4 py-3 font-sans text-sm outline-none focus:bg-white transition-colors"
+                />
+              </div>
+
+              <div>
+                <label className="block font-sans text-xs font-bold text-[#113320] uppercase mb-2">Password *</label>
+                <input
+                  type="password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="••••••••"
+                  className="w-full border-2 border-[#113320] bg-[#e2f9e1] px-4 py-3 font-sans text-sm outline-none focus:bg-white transition-colors"
+                />
+              </div>
+
+              <div className="pt-4">
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full border-2 border-[#113320] bg-[#fa6355] px-8 py-4 font-sans text-sm font-bold uppercase tracking-wider text-white hover:shadow-retro-lg transition-all disabled:opacity-50"
+                >
+                  {loading ? "AUTHENTICATING..." : "SIGN IN"}
+                </button>
+              </div>
+            </form>
+
+            <div className="mt-8 border-t-2 border-[#113320]/20 pt-6 text-center">
+              <p className="font-sans text-xs text-[#113320]/60 mb-3">Don't have a citizen account yet?</p>
+              <Link
+                href="/register"
+                className="block w-full border-2 border-[#113320] bg-[#f4ebd6] py-3 font-sans text-xs font-bold text-[#113320] uppercase tracking-wider hover:bg-[#e2f9e1] transition-colors shadow-retro"
               >
-                {loading ? "Authenticating..." : "Sign In to Portal"}
-              </button>
+                Register New Account →
+              </Link>
             </div>
-          </form>
-
-          <div className="border-t border-white/10 pt-6 text-center space-y-3">
-            <p className="text-xs text-white/40">Don't have a citizen account yet?</p>
-            <Link
-              href="/register"
-              className="block w-full border border-white/20 bg-transparent py-3 text-xs font-semibold text-white uppercase tracking-wider hover:border-green-400 hover:text-green-400 transition"
-            >
-              Register New Account →
-            </Link>
           </div>
-
         </div>
-
-        <div className="mt-6 text-center">
-          <Link href="/" className="text-xs text-white/40 hover:text-green-400 transition">
-            ← Return to Home
-          </Link>
-        </div>
-
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }
